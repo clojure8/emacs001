@@ -49,10 +49,11 @@
         (lambda (module)
           (let* ((name (car module))
                  (options (cdr module))
-                 (str-name (symbol-name name)))
+                 (str-name (symbol-name name))
+		 (dir (concat "modules/" (or (plist-get options :dir) ""))))
             ;; 构建use-package关键字的统一处理
             `(use-package ,name
-               :load-path "modules/"
+               :load-path ,dir
                ,@(cl-loop for (key val) on options by 'cddr
                           if (member key use-package-keywords)
                           collect key and collect val)
@@ -75,3 +76,5 @@
  (init-tabbar)
  (init-theme)
  )
+
+
