@@ -50,7 +50,7 @@
           (let* ((name (car module))
                  (options (cdr module))
                  (str-name (symbol-name name))
-		 (dir (concat "modules/" (or (plist-get options :dir) ""))))
+		 (dir (concat "modules/" (if (plist-get options :dir) (symbol-name (plist-get options :dir)) ""))))
             ;; 构建use-package关键字的统一处理
             `(use-package ,name
                :load-path ,dir
@@ -71,10 +71,9 @@
   )
 
 (modules
- (init-c :hook (c-mode))
- (init-modeline)
- (init-tabbar)
- (init-theme)
+ (init-c :commands hello-c)
+ (init-modeline :dir ui )
+ (init-tabbar :dir ui)
+ (init-theme :dir ui)
  )
-
 
