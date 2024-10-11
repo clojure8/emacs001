@@ -35,7 +35,7 @@
 (use-package esup :defer t)
 (defalias 'yes-or-no-p 'y-or-n-p)
 (setq cursor-in-non-selected-windows nil)
-
+(setq-default warning-minimum-log-level :error)
 
 ;; Suppress GUI features and more
 (setq use-file-dialog nil
