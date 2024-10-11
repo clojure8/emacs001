@@ -58,7 +58,7 @@
   ;; 去除titlebar
   ;; (add-to-list 'default-frame-alist '(undecorated . t))
 
-  (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+  ;;(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
   ;; (add-to-list 'default-frame-alist '(ns-appearance . dark)) ;; {light, dark}
   ;; (add-hook 'after-load-theme-hook
   ;;           (lambda ()
@@ -73,5 +73,5 @@
   (add-to-list 'default-frame-alist '(left . 214))
 
   ;; 启动自动最大化
-  ;; (add-to-list 'default-frame-alist '(fullscreen . maximized))
+  (add-to-list 'default-frame-alist '(fullscreen . maximized))
   )
