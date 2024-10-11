@@ -54,6 +54,7 @@
   (init-evil)
   (init-osx :when (memq window-system '(mac ns)))
   (init-shell :commands (eshell shell vterm))
+  ;; TODO org/window/session/lang ...
   (init-org)
  )
 
