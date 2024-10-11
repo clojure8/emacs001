@@ -23,8 +23,9 @@
 (defmacro modules (&rest modules)
   `(progn
      ,@(mapcar
-        (lambda (module)
-          (let* ((name (car module))
+        (lambda (m)
+          (let* ((module (if (symbolp m) (list m) m))
+                 (name (car module))
                  (options (cdr module))
                  (str-name (symbol-name name))
 		 (dir (concat "modules/" (if (plist-get options :dir) (symbol-name (plist-get options :dir)) ""))))
@@ -42,20 +43,22 @@
 
 ;; modules config 
 (modules
-  (init-base)
-  (init-minibuffer)
-  (init-git)
-  (init-tools)
-  (init-text)
-  (init-spell)
+  init-base
+  init-minibuffer
+  init-git
+  init-tools
+  init-text
+  init-spell
   (init-modeline :dir ui )
   ;;(init-tabbar :dir ui)
   (init-theme :dir ui)
-  (init-evil)
+  init-evil
   (init-osx :when (memq window-system '(mac ns)))
   (init-shell :commands (eshell shell vterm))
   ;; TODO org/window/session/lang ...
-  (init-org)
+  init-org
+  init-edit
+  init-prog
  )
 
 

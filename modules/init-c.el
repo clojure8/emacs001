@@ -1,9 +1,5 @@
 
 
-(defun hello-c ()
-  (interactive)
-  (message "hello c"))
-
 (use-package markdown-mode)
 (use-package yasnippet)
 (use-package lsp-bridge

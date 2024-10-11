@@ -28,25 +28,25 @@
 ;;   )
 
 
-(use-package awesome-tab
-  :load-path "~/elisp/awesome-tab/"
-  :custom
-  (awesome-tab-height 114)
-  (awesome-tab-active-bar-height 23)
-  :config
-  (defun awesome-tab-buffer-groups ()
-	(list (cond
-		   ((string-equal "*" (substring (buffer-name) 0 1))
-			"Emacs")
-		   ((or (s-starts-with? "magit" (buffer-name))
-				(s-equals? "COMMIT_EDITMSG" (buffer-name)))
-			"magit")
-		   ((or (s-starts-with? "*vter" (buffer-name))
-				(s-equals? "*vterm*" (buffer-name)))
-			"magit")
-		   (t
-			"others"))))
-  ;; (awesome-tab-mode t)
-  )
+;;(use-package awesome-tab
+;;  :load-path "~/elisp/awesome-tab/"
+;;  :custom
+;;  (awesome-tab-height 114)
+;;  (awesome-tab-active-bar-height 23)
+;;  :config
+;;  (defun awesome-tab-buffer-groups ()
+;;	(list (cond
+;;		   ((string-equal "*" (substring (buffer-name) 0 1))
+;;			"Emacs")
+;;		   ((or (s-starts-with? "magit" (buffer-name))
+;;				(s-equals? "COMMIT_EDITMSG" (buffer-name)))
+;;			"magit")
+;;		   ((or (s-starts-with? "*vter" (buffer-name))
+;;				(s-equals? "*vterm*" (buffer-name)))
+;;			"magit")
+;;		   (t
+;;			"others"))))
+;;  ;; (awesome-tab-mode t)
+;;  )
 
 (provide 'init-tabbar)
