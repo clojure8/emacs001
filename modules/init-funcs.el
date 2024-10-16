@@ -80,12 +80,12 @@ confirmation."
        map)
      t)))
 
-(defmacro set-company-backends-for! (mode &rest backends)
-  "Set `company-backends' for MODE with BACKENDS."
-  `(add-hook (intern (format "%s-hook" ',mode))
-             (lambda ()
-               (company-mode +1)
-               (setq-local company-backends ',backends))))
+;; (defmacro set-company-backends-for! (mode &rest backends)
+;;   "Set `company-backends' for MODE with BACKENDS."
+;;   `(add-hook (intern (format "%s-hook" ',mode))
+;;              (lambda ()
+;;                (company-mode +1)
+;;                (setq-local company-backends ',backends))))
 
 (defmacro shut-up! (func)
   "Silence FUNC."

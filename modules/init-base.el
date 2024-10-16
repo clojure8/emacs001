@@ -19,17 +19,18 @@
 
 
 (use-package no-littering
-  :demand
+  :ensure t
   :config
   (with-eval-after-load 'recentf
 	(setq my/etc-directory (expand-file-name "var/config/" user-emacs-directory))
 	(setq my/var-directory (expand-file-name "var/data/" user-emacs-directory))
 	(add-to-list 'recentf-exclude (expand-file-name "etc/elpa" user-emacs-directory))
 	(add-to-list 'recentf-exclude my/etc-directory)
-	(add-to-list 'recentf-exclude my/var-directory)))
+	(add-to-list 'recentf-exclude my/var-directory))
+  (setq auto-save-file-name-transforms `((".*" ,(no-littering-expand-var-file-name "auto-save/") t)))
+  (setq custom-file (no-littering-expand-etc-file-name "custom.el"))
+  )
 
-(setq auto-save-file-name-transforms `((".*" ,(no-littering-expand-var-file-name "auto-save/") t)))
-(setq custom-file (no-littering-expand-etc-file-name "custom.el"))
 (defvar temporary-file-directory "~/.emacs.d/var/tmp")
 (setq backup-directory-alist `((".*" . ,temporary-file-directory)))
 (use-package esup :defer t)
@@ -565,7 +566,7 @@ Else, call `comment-or-uncomment-region' on the current line."
 ;; MacOS specific
 (use-package exec-path-from-shell
   :ensure t
-  :when (eq system-type 'darwin)
+;;  :when (eq system-type 'darwin)
   :hook (after-init . exec-path-from-shell-initialize))
 
 (provide 'init-base)

@@ -1,3 +1,4 @@
+;; -*- coding: utf-8; lexical-binding: t; -*-
 
 ;; init package manager
 (eval-and-compile
@@ -16,7 +17,6 @@
   (setq use-package-compute-statistics t)
   (use-package foo :no-require t :ensure nil))
 
-;; Init modules
 (defun my-log (msg)
   (message "[%s] %s" (current-time-string) msg))
 
@@ -28,8 +28,7 @@
                  (name (car module))
                  (options (cdr module))
                  (str-name (symbol-name name))
-		 (dir (concat "modules/" (if (plist-get options :dir) (symbol-name (plist-get options :dir)) ""))))
-            ;; 构建use-package关键字的统一处理
+		         (dir (concat "modules/" (if (plist-get options :dir) (symbol-name (plist-get options :dir)) ""))))
             `(use-package ,name
                :load-path ,dir
                ,@(cl-loop for (key val) on options by 'cddr
@@ -43,6 +42,7 @@
 
 ;; modules config 
 (modules
+  init-pm
   init-base
   init-minibuffer
   init-git
@@ -59,7 +59,7 @@
   init-org
   init-edit
   init-prog
+  init-layout
+  init-lsp-bridge
  )
-
-
 

@@ -52,6 +52,10 @@
   (consult-async-input-throttle 0.2)
   (consult-async-input-debounce 0.1))
 
+(use-package consult-yasnippet
+  :ensure t
+  :after (consult yasnippet))
+
 ;; Consult users will also want the embark-consult package.
 (use-package embark-consult
   :ensure t
@@ -60,6 +64,12 @@
 (use-package marginalia
   :ensure t
   :hook (after-init . marginalia-mode))
+
+(use-package orderless
+  :ensure t
+  :custom
+  (completion-styles '(orderless basic))
+  (completion-category-overrides '((file (styles basic partial-completion)))))
 
 (provide 'init-minibuffer)
 ;;; init-minibuffer.el ends here

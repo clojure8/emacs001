@@ -6,3 +6,6 @@ elpa/
 elpaca/
 recentf
 projectile-bookmarks.eld
+elisp/
+transient/
+places

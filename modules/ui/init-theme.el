@@ -16,6 +16,7 @@
 ;; (setq my-theme 'doom-solarized-light)
 
 (use-package doom-themes
+  :ensure t
   :custom-face
   (magit-header-line ((t (:inherit 'mode-line))))
   :config
@@ -27,14 +28,14 @@
   ;; (doom-themes-treemacs-config)
   )
 
-(use-package solarized-theme :defer t)
-(use-package dracula-theme :defer t)
-(use-package chocolate-theme :defer t)
-(use-package tron-legacy-theme :defer t)
-(use-package sublime-themes :defer t)
-(use-package kaolin-themes :defer t)
-(use-package modus-themes :defer t)
-(use-package tok-theme :defer t)
+(use-package solarized-theme :ensure t :defer  t)
+(use-package dracula-theme :ensure t :defer  t)
+(use-package chocolate-theme :ensure t :defer  t)
+(use-package tron-legacy-theme :ensure t :defer  t)
+(use-package sublime-themes :ensure t :defer  t)
+(use-package kaolin-themes :ensure t :defer  t)
+(use-package modus-themes :ensure t :defer  t)
+(use-package tok-theme :ensure t :defer  t)
 
 (use-package ef-themes
   :ensure t
