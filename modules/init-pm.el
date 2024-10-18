@@ -40,11 +40,8 @@
 (elpaca `(,@elpaca-order))
 
 ;; Install use-package support
-;;(elpaca elpaca-use-package
-  ;; Enable use-package :ensure support for Elpaca.
+;; (elpaca elpaca-use-package
 ;;  (elpaca-use-package-mode))
 
-;;(use-package treemacs
-;;  :ensure t)
 
 (provide 'init-pm)

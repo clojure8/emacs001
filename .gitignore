@@ -9,3 +9,5 @@ projectile-bookmarks.eld
 elisp/
 transient/
 places
+.aider*
+.cache/
