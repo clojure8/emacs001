@@ -5,4 +5,9 @@
   :config
   (projectile-mode +1))
 
+(use-package prsp-mode
+  :ensure t
+  :config
+  (prsp-mode +1))
+
 (provide 'init-prog)

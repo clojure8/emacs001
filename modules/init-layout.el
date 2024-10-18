@@ -24,6 +24,11 @@
    ("C-x C-a g" . activities-revert)
    ("C-x C-a l" . activities-list)))
 
+(use-package eyebrowse
+  :ensure t
+  :config
+  (eyebrowse-mode t))
+
 (provide 'init-layout)
 
 
