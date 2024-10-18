@@ -4,6 +4,7 @@
 ;; (use-package mood-line
 ;;   :hook (after-init . mood-line-mode)
 ;;   )
+
 (use-package doom-modeline
   :ensure t
   :hook (after-init . doom-modeline-mode))
@@ -89,5 +90,7 @@
 (use-package minions
   :ensure t
   :hook (after-init . minions-mode))
+
+
 
 (provide 'init-modeline)

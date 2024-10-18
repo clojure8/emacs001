@@ -12,6 +12,13 @@
   :custom
   (vertico-sort-function nil))
 
+(use-package prescient
+  :ensure t)
+
+(use-package vertico-prescient
+  :ensure t
+  :hook (vertico-mode . vertico-prescient-mode))
+
 (use-package embark
   :ensure t
   :bind (:map minibuffer-local-map
