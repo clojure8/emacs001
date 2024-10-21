@@ -17,7 +17,6 @@
 			(global-hl-line-mode +1)
 			(recentf-mode +1)))
 
-
 (use-package no-littering
   :ensure t
   :config
@@ -28,8 +27,7 @@
 	(add-to-list 'recentf-exclude my/etc-directory)
 	(add-to-list 'recentf-exclude my/var-directory))
   (setq auto-save-file-name-transforms `((".*" ,(no-littering-expand-var-file-name "auto-save/") t)))
-  (setq custom-file (no-littering-expand-etc-file-name "custom.el"))
-  )
+  (setq custom-file (no-littering-expand-etc-file-name "custom.el")))
 
 (defvar temporary-file-directory "~/.emacs.d/var/tmp")
 (setq backup-directory-alist `((".*" . ,temporary-file-directory)))
@@ -248,15 +246,15 @@
 (use-package minibuffer
   :ensure nil
   :bind (:map minibuffer-local-map
-         ([escape] . abort-recursive-edit)
-         :map minibuffer-local-ns-map
-         ([escape] . abort-recursive-edit)
-         :map minibuffer-local-completion-map
-         ([escape] . abort-recursive-edit)
-         :map minibuffer-local-must-match-map
-         ([escape] . abort-recursive-edit)
-         :map minibuffer-local-isearch-map
-         ([escape] . abort-recursive-edit))
+              ([escape] . abort-recursive-edit)
+              :map minibuffer-local-ns-map
+              ([escape] . abort-recursive-edit)
+              :map minibuffer-local-completion-map
+              ([escape] . abort-recursive-edit)
+              :map minibuffer-local-must-match-map
+              ([escape] . abort-recursive-edit)
+              :map minibuffer-local-isearch-map
+              ([escape] . abort-recursive-edit))
   :custom
   ;; Default minibuffer is fine-tuned since Emacs 29
   (completion-auto-help t)
@@ -349,25 +347,11 @@
   :ensure nil
   :commands re-builder
   :bind (:map reb-mode-map
-         ("C-c C-k" . reb-quit)
-         ("C-c C-p" . reb-prev-match)
-         ("C-c C-n" . reb-next-match))
+              ("C-c C-k" . reb-quit)
+              ("C-c C-p" . reb-prev-match)
+              ("C-c C-n" . reb-next-match))
   :custom
   (reb-re-syntax 'string))
-
-;; window layout manager
-;;
-;; gt next-tab
-;; gT prev-tab
-(use-package tab-bar
-  :ensure nil
-  :hook (after-init . tab-bar-mode)
-  :custom
-  (tab-bar-show nil)
-  (tab-bar-tab-hints t)
-  (tab-bar-close-button-show nil)
-  (tab-bar-tab-name-function 'tab-bar-tab-name-all)
-  (tab-bar-format '(tab-bar-format-tabs tab-bar-separator)))
 
 (use-package newcomment
   :ensure nil
@@ -409,7 +393,7 @@ Else, call `comment-or-uncomment-region' on the current line."
 (use-package comint
   :ensure nil
   :bind (:map comint-mode-map
-         ([remap kill-region]   . backward-kill-word))
+              ([remap kill-region]   . backward-kill-word))
   :custom
   ;; No paging, `eshell' and `shell' will honoring.
   (comint-pager "cat")
@@ -566,7 +550,7 @@ Else, call `comment-or-uncomment-region' on the current line."
 ;; MacOS specific
 (use-package exec-path-from-shell
   :ensure t
-;;  :when (eq system-type 'darwin)
+  ;;  :when (eq system-type 'darwin)
   :hook (after-init . exec-path-from-shell-initialize))
 
 (provide 'init-base)

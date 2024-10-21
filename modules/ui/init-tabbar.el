@@ -50,8 +50,9 @@
 ;;  )
 (use-package vim-tab-bar
   :ensure t
-  :commands vim-tab-bar-mode
   :hook
-  (after-init . vim-tab-bar-mode))
+  (after-init . vim-tab-bar-mode)
+  :config
+  (setq vim-tab-bar-show-groups t))
 
 (provide 'init-tabbar)

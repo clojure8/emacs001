@@ -7,7 +7,7 @@
    'package-archives '(("gnu"    . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
                        ("nongnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/nongnu/")
                        ("melpa"  . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-		       ("gnu-devel" . "https://elpa.gnu.org/devel")))
+		               ("gnu-devel" . "https://elpa.gnu.org/devel")))
   (package-initialize)
   (unless (package-installed-p 'use-package)
     (package-refresh-contents)
@@ -42,24 +42,24 @@
 
 ;; modules config 
 (modules
-  init-pm
-  init-base
-  init-minibuffer
-  init-git
-  init-tools
-  init-text
-  init-spell
-  (init-modeline :dir ui )
-  ;;(init-tabbar :dir ui)
-  (init-theme :dir ui)
-  init-evil
-  (init-osx :when (memq window-system '(mac ns)))
-  (init-shell :commands (eshell shell vterm))
-  ;; TODO org/window/session/lang ...
-  init-org
-  init-edit
-  init-prog
-  init-layout
-  init-lsp-bridge
+ init-pm
+ init-base
+ init-minibuffer
+ init-git
+ init-tools
+ init-text
+ init-spell
+ (init-modeline :dir ui )
+ (init-tabbar :dir ui)
+ (init-theme :dir ui)
+ init-evil
+ (init-osx :when (memq window-system '(mac ns)))
+ (init-shell :commands (eshell shell vterm))
+ ;; TODO org/window/session/lang ...
+ init-org
+ init-edit
+ init-prog
+ init-layout
+ init-lsp-bridge
  )
 

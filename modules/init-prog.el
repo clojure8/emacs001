@@ -5,9 +5,17 @@
   :config
   (projectile-mode +1))
 
+(defun close-all-file ()
+  "Close all buffers and windows, then open the specified file."
+  ;; Kill all buffers
+  (mapc 'kill-buffer (buffer-list))
+  ;; Delete all windows
+  (delete-other-windows))
+
 (defun my/dashboard-open-project-and-treemacs (project-root)
   "Open treemacs for the given PROJECT-ROOT and open recent files."
   (interactive)
+  ;; (close-all-file)
   ;; 打开 treemacs 并跳转到项目根目录
   (treemacs-add-and-display-current-project)
   ;; 尝试从 recentf 列表中找到与该项目相关的文件并打开
@@ -42,5 +50,8 @@
   :ensure t
   :config
   (apheleia-global-mode +1))
+
+(use-package devdocs
+  :ensure t)
 
 (provide 'init-prog)
